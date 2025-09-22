@@ -40,7 +40,7 @@ I made the webapp to have these additional features because I thought of them (t
      4. Create OAuth 2.0 credentials
      5. Download the credentials file and rename it to `credentials.json`
 
-3. `.env` file
+2. `.env` file
    - Required for environment variables and API keys
    - Should contain:
    ```bash
@@ -53,32 +53,30 @@ I made the webapp to have these additional features because I thought of them (t
    ```
 ### Need to be prepared
 1. MongoDB Atlas; get `MONGO_URI`, `MONGO_DB`, `MONGO_COLL`. We need this to load `tax_records.csv` into a MongoDB collection using `import_tax_records.py`
+   - Create a free cluster
+      1. Go to MongoDB Atlas → Sign in / Sign up
+      2. Create a Free (M0) cluster
+      3. Choose any cloud + region (defaults are fine)
 
-#### A. Create a free cluster
+   - Create a database user
+      1. In Atlas, open Database Access → Add New Database User
+      2. Set a username & password
+      3. Role → Read and write to any database
+      4. Save the credentials (you’ll need them in the URI)
 
-   1. Go to MongoDB Atlas → Sign in / Sign up
-   2. Create a Free (M0) cluster
-   3. Choose any cloud + region (defaults are fine)
+   - Allow network access
+      1. Go to Network Access → Add IP Address
+      2. Either click Allow Access from Anywhere (0.0.0.0/0) or add your current IP
 
-#### B. Create a database user
-   1. In Atlas, open Database Access → Add New Database User
-   2. Set a username & password
-   3. Role → Read and write to any database
-   4. Save the credentials (you’ll need them in the URI)
+   - Get the connection string
+      1. Databases → Connect → Drivers
+      2. Copy the URI (example):
+      3. mongodb+srv://<user>:<password>@cluster0.xxyyy.mongodb.net/?retryWrites=true&w=majority
+      4. Replace <user> and <password> with the ones you created.
 
-#### C. Allow network access
-   1. Go to Network Access → Add IP Address
-   2. Either click Allow Access from Anywhere (0.0.0.0/0) or add your current IP
-
-#### D. Get the connection string
-   1. Databases → Connect → Drivers
-   2. Copy the URI (example):
-   3. mongodb+srv://<user>:<password>@cluster0.xxyyy.mongodb.net/?retryWrites=true&w=majority
-   4. Replace <user> and <password> with the ones you created.
-
-#### E. Choose DB and collection names
-Pick any names (e.g. ai_agent_tax and tax_records).
-No need to pre-create them; Mongo will create them on first insert.
+   - Choose DB and collection names
+      Pick any names (e.g. ai_agent_tax and tax_records).
+      No need to pre-create them; Mongo will create them on first insert.
 
 #### F. Add to .env, example below:
 ```bash
