@@ -54,33 +54,33 @@ I made the webapp to have these additional features because I thought of them (t
 ### Need to be prepared
 1. MongoDB Atlas; get `MONGO_URI`, `MONGO_DB`, `MONGO_COLL`. We need this to load `tax_records.csv` into a MongoDB collection using `import_tax_records.py`
 
-A. Create a free cluster
+#### A. Create a free cluster
 
    1. Go to MongoDB Atlas → Sign in / Sign up
    2. Create a Free (M0) cluster
    3. Choose any cloud + region (defaults are fine)
 
-B. Create a database user
+#### B. Create a database user
    1. In Atlas, open Database Access → Add New Database User
    2. Set a username & password
    3. Role → Read and write to any database
    4. Save the credentials (you’ll need them in the URI)
 
-C. Allow network access
+#### C. Allow network access
    1. Go to Network Access → Add IP Address
    2. Either click Allow Access from Anywhere (0.0.0.0/0) or add your current IP
 
-D. Get the connection string
+#### D. Get the connection string
    1. Databases → Connect → Drivers
    2. Copy the URI (example):
    3. mongodb+srv://<user>:<password>@cluster0.xxyyy.mongodb.net/?retryWrites=true&w=majority
    4. Replace <user> and <password> with the ones you created.
 
-E. Choose DB and collection names
+#### E. Choose DB and collection names
 Pick any names (e.g. ai_agent_tax and tax_records).
 No need to pre-create them; Mongo will create them on first insert.
 
-F. Add to .env, example below:
+#### F. Add to .env, example below:
 ```bash
 MONGO_URI=mongodb+srv://user:pass@cluster0.xxyyy.mongodb.net/?retryWrites=true&w=majority
 MONGO_DB=ai_agent_tax
@@ -128,12 +128,12 @@ MONGO_COLL=tax_records
    ```
 
 8. Now you can use the webapp. Here are some guide to use it:
-a. You have navigation tab; 2 Client and 2 Admin facing. To use these tabs use these credentials (username: admin; password: administrator -- You can change them within app.py, code line 90 if you want)
-b. Be sure to check admin-manage records to see the user's credentials so you can talk to GAIA in both the Client tabs.
-c. For example type: "Dwight Schrute 112345" and enter, and GAIA will now talk to you.
-d. Try to ask for your tax information, general questions about Canada's tax or attraction (I limit it this way on purpose in system prompt to test it out), and also to book meetings (the coolest part since the updated meeting bookings and it's details will show up in your google calendar).
-e. You can try and talk to GAIA in the voice chat tab (Just be reminded that this takes much more tokens).
-f. You may play around with the admin tab to add or manage records (If you want to refresh the records to the original 10 records from tax_records.csv, just run the import_tax_records.py again)
+- You have navigation tab; 2 Client and 2 Admin facing. To use these tabs use these credentials (username: admin; password: administrator -- You can change them within app.py, code line 90 if you want)
+- Be sure to check admin-manage records to see the user's credentials so you can talk to GAIA in both the Client tabs.
+- For example type: "Dwight Schrute 112345" and enter, and GAIA will now talk to you.
+- Try to ask for your tax information, general questions about Canada's tax or attraction (I limit it this way on purpose in system prompt to test it out), and also to book meetings (the coolest part since the updated meeting bookings and it's details will show up in your google calendar).
+- You can try and talk to GAIA in the voice chat tab (Just be reminded that this takes much more tokens).
+- You may play around with the admin tab to add or manage records (If you want to refresh the records to the original 10 records from tax_records.csv, just run the import_tax_records.py again)
 
 ## Notes
 - The application will generate a `token.json` file after the first successful Google Calendar authentication
