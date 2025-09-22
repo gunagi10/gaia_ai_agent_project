@@ -75,15 +75,15 @@ I made the webapp to have these additional features because I thought of them (t
       4. Replace <user> and <password> with the ones you created.
 
    - Choose DB and collection names
-      Pick any names (e.g. ai_agent_tax and tax_records).
-      No need to pre-create them; Mongo will create them on first insert.
+      1. Pick any names (e.g. ai_agent_tax and tax_records).
+      2. No need to pre-create them; Mongo will create them on first insert.
 
-#### F. Add to .env, example below:
-```bash
-MONGO_URI=mongodb+srv://user:pass@cluster0.xxyyy.mongodb.net/?retryWrites=true&w=majority
-MONGO_DB=ai_agent_tax
-MONGO_COLL=tax_records
-```
+   - Add to .env, example below:
+      ```bash
+      MONGO_URI=mongodb+srv://user:pass@cluster0.xxyyy.mongodb.net/?retryWrites=true&w=majority
+      MONGO_DB=ai_agent_tax
+      MONGO_COLL=tax_records
+      ```
 
 2. LangSmith (FREE - if you choose to use LangChain's tracing and observability platform). 
    Create an account and get the API key. This webpage contains the guide (https://docs.langchain.com/langsmith/create-account-api-key)
