@@ -1,6 +1,6 @@
 # AI Agent Chat Application with Google Calendar integration and ability to internet search and read Database (GAIA - Gian's AI Agent)
 
-This project is my first AI Agent project that I created with very limited python knowledge and no technical background. I started with only https://python.langchain.com/docs/introduction/ that website and ChatGPT (And this was about April 2025 so ChatGPT wasn't as good to code). Somewhere along the way I read various documentations, Youtube videos, StackOverflow, Reddit forums to obtain the information needed to add features to the app, one step at a time. In the end I even learned and used docker and published the app to the cloud with DigitalOcean so that it's accessible from the internet. I learned so much during the journey to create this web app, and that is when I realize that I want to learn more of coding and AI agent itself. I know the app is not perfect, but I am proud of myself that I sucessfully added all the functions and changes that I did want to add into it.
+This project is my first AI Agent project that I created with very limited python knowledge and no technical background. I started with only https://python.langchain.com/docs/introduction/ and ChatGPT as the main resources (This was about April 2025 so ChatGPT wasn't that great at coding as there were only ChatGPT 4). Somewhere along the way I read various documentations, Youtube videos, StackOverflow, Reddit forums to obtain the information needed to add features to the app, one step at a time. In the end I even learned and used docker and published the app to the cloud with DigitalOcean so that it's accessible from the internet. I learned so much during the journey to create this web app, and that is when I realize that I want to learn more of coding and AI agent itself. I know the app is not perfect, but I am proud of myself that I sucessfully added all the functions and changes that I did want to add into it.
 
 I call this project GAIA, it is an AI-powered chat application that acts as an assistant for the owner (users are customers). I give it tools, but GAIA will choose which tools to use by itself depending on the user's queries.
 
@@ -86,10 +86,10 @@ I made the webapp to have these additional features because I thought of them (t
       ```
 
 2. LangSmith (FREE - if you choose to use LangChain's tracing and observability platform). 
-   Create an account and get the API key. This webpage contains the guide (https://docs.langchain.com/langsmith/create-account-api-key)
+   Create an account and get the API key. This webpage contains the guide -> https://docs.langchain.com/langsmith/create-account-api-key
 
 3. Tavily API key (FREE - So your AI Agent can access internet search)
-   Create an account and get the API key. https://docs.tavily.com/documentation/quickstart
+   Create an account and get the API key. -> https://docs.tavily.com/documentation/quickstart
 
 4. OpenAI API Key (PAID - this is your AI Agent's brain). 
    After you create an account at platform.openai.com, add some funds to your account ($5 is much more than enough for testing and demo purposes), you can request an API key, put it in .env and use it.
