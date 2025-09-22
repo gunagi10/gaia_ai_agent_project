@@ -1,0 +1,14 @@
+# Security
+.env
+credentials.json
+token.json
+
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter notebooks
+.ipynb_checkpoints/
